@@ -7,12 +7,11 @@ def bitsCount(n: int) -> int:
         n >>= 1
     return count
 
-def check(arg: int, res: int) -> bool:
-    temp = bitsCount(arg)
-    if temp != res:
-        print(f"Function failed:\nArgument: {arg}\nExpected result: {res}\nActual result: {temp}\n")
-        return False
-    return True
+def runTests():
+    assert bitsCount(10) == 2
+    assert bitsCount(-123) == 3
+    assert bitsCount(0) == 0
+    assert bitsCount(1) == 1
+    assert bitsCount(2) == 1
 
-if check(10, 2) + check(-123, 3) == 2:
-    print("All tests passed!\n")
+runTests()
